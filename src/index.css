@@ -1,13 +1,205 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+=============== 
+Fonts
+===============
+*/
+@import url('https://fonts.googleapis.com/css?family=Nunito:500,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap");
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+
+  --clr-headline: #2b2c34;
+  --clr-subheadline: #617D98;
+
+  --clr-main: #fffffe;
+  --clr-accent: #6246ea;
+  --clr-highlight: #e45858;
+  --clr-secondary: #d1d1e9;
+  --clr-tertiary: #ffe6e6;
+
+  --ff-primary: 'Inter', 'Nunito', sans-serif;
+  --ff-secondary: 'Nunito', sans-serif;
+  --transition: all 0.3s linear;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-secondary);
+  color: var(--clr-headline);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  box-shadow: inset 0 0 0 0 var(--clr-highlight);
+  color: var(--clr-highlight);
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+.logo {
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-subheadline);
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/*  global classes */
+
+/* .btn {
+  text-transform: uppercase;
+  background: var(--clr-accent);
+  color: var(--clr-main);
+  padding: 0.375rem 0.75rem;
+  display: inline-block;
+  font-weight: 400;
+  transition: var(--transition);
+  font-size: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+}
+.btn:hover {
+  background: var(--clr-secondary);
+  color: var(--clr-headline);
+} */
+
+button,
+.btn {
+  font-family: var(--ff-primary);
+  border-radius: 1rem;
+  border-color: transparent;
+  padding: 0.25rem 0.75rem;
+  text-transform: capitalize;
+  background: var(--clr-accent);
+  color: var(--clr-main);
+  transition: var(--transition);
+  cursor: pointer;
+
+}
+
+button:hover,
+.btn:hover {
+  background: var(--clr-main);
+  color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+}
+
+/* section */
+.section {
+  padding: 1rem 0;
+  position: relative;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+
+.loading-img {
+  width: 20rem;
+  height: 20rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10rem;
+}
+
+main {
+  padding-bottom: 2rem;
 }
